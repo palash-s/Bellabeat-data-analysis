@@ -53,20 +53,16 @@ The CCO, Sando Mur, and the entire analytics team
 1.	For analysis two variables are used daily Total distance and daily Calories. These two variables can be used to identify relationship between total calories burnt by a user by walking specific miles on an average on daily basis. At first, I calculated the average, min and max distanced walked and calories burnt by each user .
 
 
-Plotting distance and calories 
+
 ![Screenshot](/plots/Rplot.png)
+Plotting distance and calories 
 
 2.	After plotting the daily total distance against the daily calories burnt, it was clear that some users are walking or running shorter distance and burning higher calories. While some are walking or running longer distance but burning less calories.
 
+![Screenshot](/plots/Rplot01.png)
 
+3.	LEts plot based on each user, to identify through out the period of 2 months, how much they were running and burning calories. 
 
-3.	LEts plotbased on each user, to identify through out the period of 2 months, how much they were running and burning calories. 
-
-```{r ggplot 2}
-daily_df %>% 
-  ggplot(aes(x = TotalDistance, y = Calories)) + geom_point() + facet_wrap(~Id) + 
-  labs(title = "relationship between distance and calories for each user")
-```
 
 
 4.	To specifically get the idea on how much usually the users burn calories while walking or travelling how much distance, lets categorize the data based on the amount of calorie loss. 
@@ -96,57 +92,24 @@ iii.	High cal-loss – categorized users who lost calories between 3500 above ea
 
 Lets see users in the above category
 
-```{r boxplot}
-
-calories_burn %>% 
-  ggplot(aes(x = TotalDistance, y = Calories)) + geom_boxplot() +
-  facet_wrap(~cal_categories ) + labs(title = "calories burnt vs Total distace by users by category")
-```
-
-```{r}
+![Screenshot](/plots/Rplot02.png)
 
 
-calories_burn %>% 
-  ggplot(aes(x = TotalDistance, y = Calories, col = Id, shape = cal_categories)) + geom_point() +
-  facet_wrap(~cal_categories ) + labs(title = "calories burnt vs Total distace by users by category")
-```
+
+
 
 5.	Based on the boxplot graphs, it can be seen how and why some sures are burning less calories than others. It can also be assumed based on the visuals that, users with high calorie loss are running faster and usually covering longer distance and users in less cal-loss category are walking less distance and users with mid calorie loss are walking or slow running.
 
+![Screenshot](/plots/Rplot05.png)
+
 
 6.	Later findings shows us that how much each user is actually burning calories and walking / running distance. 
-```{r}
 
-less_cal_user <- calories_burn %>% 
-  filter(cal_categories == "less cal-loss") %>% 
-  group_by(cal_categories) 
+![Screenshot](/plots/Rplot06.png)
 
+![Screenshot](/plots/Rplot07.png)
 
-less_cal_user %>% 
-  ggplot(aes(x = TotalDistance, y = Calories, col = Id)) + geom_point() + facet_wrap(~Id) + 
-  labs(title = "relationship between distance and low calories loss")
-
-
-mid_cal_user <- calories_burn %>% 
-  filter(cal_categories == "mid cal-loss") %>% 
-  group_by(cal_categories) 
-
-
-mid_cal_user %>% 
-  ggplot(aes(x = TotalDistance, y = Calories, col = Id)) + geom_point() + facet_wrap(~Id) + 
-  labs(title = "relationship between distance and mind calories loss users")
-
-
-high_cal_user <- calories_burn %>% 
-  filter(cal_categories == "high cal-loss") %>% 
-  group_by(cal_categories) 
-
-
-high_cal_user %>% 
-  ggplot(aes(x = TotalDistance, y = Calories, col = Id)) + geom_point() + facet_wrap(~Id) + 
-  labs(title = "relationship between distance and high calories loss users")
-
-```
+![Screenshot](/plots/Rplot08.png)
 
 ## Recomendations Based on alaysis.
 1.  Based on the analysis, most users are between running slow or walking slow but they cover longer distance.
