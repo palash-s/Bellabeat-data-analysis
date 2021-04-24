@@ -54,12 +54,12 @@ The CCO, Sando Mur, and the entire analytics team
 
 
 
-![Screenshot](/plots/Rplot.png)
+![Plot](/plots/Rplot.png)
 Plotting distance and calories 
 
 2.	After plotting the daily total distance against the daily calories burnt, it was clear that some users are walking or running shorter distance and burning higher calories. While some are walking or running longer distance but burning less calories.
 
-![Screenshot](/plots/Rplot01.png)
+![Plot](/plots/Rplot01.png)
 
 3.	LEts plot based on each user, to identify through out the period of 2 months, how much they were running and burning calories. 
 
@@ -92,7 +92,7 @@ iii.	High cal-loss – categorized users who lost calories between 3500 above ea
 
 Lets see users in the above category
 
-![Screenshot](/plots/Rplot02.png)
+![Plot](/plots/Rplot02.png)
 
 
 
@@ -100,16 +100,16 @@ Lets see users in the above category
 
 5.	Based on the boxplot graphs, it can be seen how and why some sures are burning less calories than others. It can also be assumed based on the visuals that, users with high calorie loss are running faster and usually covering longer distance and users in less cal-loss category are walking less distance and users with mid calorie loss are walking or slow running.
 
-![Screenshot](/plots/Rplot05.png)
+![Plot](/plots/Rplot05.png)
 
 
 6.	Later findings shows us that how much each user is actually burning calories and walking / running distance. 
 
-![Screenshot](/plots/Rplot06.png)
+![Plot](/plots/Rplot06.png)
 
-![Screenshot](/plots/Rplot07.png)
+![Plot](/plots/Rplot07.png)
 
-![Screenshot](/plots/Rplot08.png)
+![Plot](/plots/Rplot08.png)
 
 ## Recomendations Based on alaysis.
 1.  Based on the analysis, most users are between running slow or walking slow but they cover longer distance.
