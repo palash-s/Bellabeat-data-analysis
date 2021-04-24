@@ -49,47 +49,12 @@ The CCO, Sando Mur, and the entire analytics team
 
 ## Analyzing the Data.
 
-First install recquired packages.
-```{r install packages}
-
-library(tidyverse)
-library(skimr)
-
-```
-import the csv file and structure of data
-```{r load data}
-
-daily_df = read.csv("/Users/palas/Downloads/archive_fitbit/daily_activity_data.csv")
-
-str(daily_df)
-glimpse(daily_df)
-
-skim_without_charts(daily_df)
-colnames(daily_df)
-```
-
 
 1.	For analysis two variables are used daily Total distance and daily Calories. These two variables can be used to identify relationship between total calories burnt by a user by walking specific miles on an average on daily basis. At first, I calculated the average, min and max distanced walked and calories burnt by each user .
 
-```{r general stats}
-
-summary_activity <- daily_df %>% 
-select(Id, TotalDistance, Calories) %>%  
-group_by(Id) %>%   
-summarise( mean_total_dist = mean(TotalDistance), max_total_dist = max(TotalDistance), min_total_dist = min(TotalDistance),
-           mean_total_cal = mean(Calories), max_cal = max(Calories), min_cal = min(Calories))
-
-View(summary_activity)
-```
 
 Plotting distance and calories 
-
-```{r ggplot 1}
-daily_df %>% 
-  ggplot(aes(x = TotalDistance, y = Calories, col = Id)) + geom_point() + geom_smooth(method = lm) + 
-  labs(title = "relationship between distance and calories")
-```
-
+![Screenshot](/plots/Rplot.png)
 
 2.	After plotting the daily total distance against the daily calories burnt, it was clear that some users are walking or running shorter distance and burning higher calories. While some are walking or running longer distance but burning less calories.
 
