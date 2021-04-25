@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## How Can a Wellness Technolog Company Play It Smart?
+## How Can a Wellness Technology Company Play It Smart?
 
 
 ### Introduction to Bellabeat
