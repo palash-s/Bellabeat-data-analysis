@@ -1,4 +1,6 @@
 library(tidyverse)
+
+
 library(skimr)
 
 
@@ -97,7 +99,7 @@ mid_cal_user <- calories_burn %>%
 
 mid_cal_user %>% 
   ggplot(aes(x = TotalDistance, y = Calories, col = Id)) + geom_point() + facet_wrap(~Id) + 
-  labs(title = "relationship between distance and mind calories loss users")
+  labs(title = "relationship between distance and mid calories loss users")
 
 
 high_cal_user <- calories_burn %>% 
